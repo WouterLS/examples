@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kubernetestest-bbc8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kubernetestest-bbc8"
+  template:
+    metadata:
+      labels:
+        app: "kubernetestest-bbc8"
+    spec:
+      containers:
+        - name: "kubernetestest-bbc8"
+          image: "lstestgithubregistry.azurecr.io/kubernetestest"
+          ports:
+          - containerPort: 80
